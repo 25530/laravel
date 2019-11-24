@@ -19,4 +19,4 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/producten/{}', 'ProductController@ShowProduct');
+Route::get('/producten/{id}', 'ProductController@showProduct');

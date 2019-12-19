@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('header')
+Contact page
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('content')
 
-        <!-- Styles -->
-        <h1>hallo<h1>
-    </body>
-</html>
+@if($erros->any())
+@endif
+<form action="{{ route('product.store') }}" method="POST">
+@csrf
+  First name:<br>
+  <input type="text" name="name" value="{{ old('name')}}" @error ('name') is-invallid @enderror />
+  @error('name')
+  @enderror
+  <br>
+  Last name:<br>
+  <input type="text" name="desc" value="Mouse">
+
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+@endsection
+<p>
+text
+</p>

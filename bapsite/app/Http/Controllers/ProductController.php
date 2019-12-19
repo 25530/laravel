@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function showProduct($id)
+    public function showProduct($id, Request $request)
     {
-        return view();
+       //return 'The value of of GET parameter showform = ' . $request->get('show_form');
+        //return view('product', ['id' => $id ]);
+        dd($id);
     }
 }

@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>haaloo<h1>
+    <h5>{{ $id }}</h5>
 </body>
 </html>

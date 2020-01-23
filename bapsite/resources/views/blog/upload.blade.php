@@ -32,6 +32,6 @@
         </table>
         </div>
 </form>
-
+<a href="{{ route('home') }}">Ga terug</a>
 <br />
 @endsection

@@ -6,6 +6,8 @@
 
 @section('content')
    <div class="chavez">
+       
+       <a href="{{ route('home') }}">Ga terug</a>
     @foreach($blog as $blogski)
 
         <div class="poetin">
@@ -18,4 +20,5 @@
     {{ $blog->links() }}
   
 </div>
+
 @endsection

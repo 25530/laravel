@@ -13,8 +13,9 @@ class InfoSeeder extends Seeder
     {
         // db data genereren
         for($i = 0; $i < 200; $i++){
-            $data = new Data();
-            $data->title = 'product' . $i;
+            $data = new data();
+            $data->title = 'data' . $i;
+            $pub_date = new \DateTime();
             $data->save();
         }
     }

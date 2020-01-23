@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@showHome');
+Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
-Route::get('/contact/create', 'HomeController@create')->name('product.add');
+Route::get('/blog', 'dataController@list')->name('blog.add');
+Route::get('/blog/details','dataController@details')->name('blog.details');
 Route::post('/contact/create', 'HomeController@store')->name('product.store');
-
-
+Route::get('/upload', 'UploadController@index')->name('upload');
+Route::post('upload', 'UploadController@upload');
 
 
 
@@ -28,4 +29,9 @@ Route::post('/contact/create', 'HomeController@store')->name('product.store');
     Route::get('categories', function(){  return 'admin categories';});
 });
 */
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 

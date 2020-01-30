@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/contact', 'HomeController@contact');
 Route::get('/blog', 'dataController@list')->name('blog.add');
 Route::get('/blog/details','dataController@details')->name('blog.details');
 Route::post('/contact/create', 'HomeController@store')->name('product.store');

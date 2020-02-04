@@ -12,9 +12,11 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/blog/post', 'baseController@index')->name('blog.post');
+Route::get('/blog/add', 'baseController@create')->name('blog.create');
+Route::post('/blog/add', 'baseController@store')->name('blog.store');
 Route::get('/blog', 'dataController@list')->name('blog.add');
 Route::get('/blog/details','dataController@details')->name('blog.details');
-Route::post('/contact/create', 'HomeController@store')->name('product.store');
 Route::get('/upload', 'UploadController@index')->name('upload');
 Route::post('upload', 'UploadController@upload');
 

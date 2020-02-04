@@ -14,6 +14,7 @@
 
             <a href="{{ route('blog.add') }}">Klik hier om naar de blog te gaan</a><br><br>
             <a href="{{ route('upload') }}">Klik hier om een file te uploaden</a>
+            <a href="{{ route('blog.create') }}">Klik hier om een file te uploaden</a>
         </div>
 
   

@@ -15,7 +15,7 @@
 </div>
 
 @endif
-    <form action="{{ route('blog.store') }}" method="POST">
+    <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
         <div class="form-group">
             <label for="">Titel</label>
@@ -32,6 +32,10 @@
         <div class="form-group">
             <label for="">Datum</label>
             <input type="date" class="form-control" name="pub_date" value="{{ old('pub_date') }}" />
+        </div>
+        <div class="form-group">
+            <label for="">Afbeelding</label>
+            <input type="file" class="form-control" name="image" />
         </div>
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>

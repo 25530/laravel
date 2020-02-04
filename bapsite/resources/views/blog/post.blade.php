@@ -12,6 +12,7 @@
 
         <div class="poetin">
             <h2>{{ $blogsko->title }}</h2>
+            <img src="{{ asset('storage/' . $product->image) }}" />
             <p>{{ $blogsko->desc }}</p>
             <p>{{ $blogsko->tijd }}</p>
             <p>{{ $blogsko->pub_date }}</p>

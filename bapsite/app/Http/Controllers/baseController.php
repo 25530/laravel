@@ -36,18 +36,27 @@ class baseController extends Controller
      */
     public function store(Request $request)
     {
+    
+
         $blogData = $request->validate(
             [
             'title' => 'required|min:1',
             'desc' => 'required|min:10|max:650',
             'tijd' => 'required|numeric',
-            'pub_date' => 'required|after_or_equal:today'
+            'pub_date' => 'required|after_or_equal:today',
+            'image' => 'image'
             ]
             );
+            
+            $newFilename = $blogData['image']->store('blog', 'public');
+            $blogData['image'] = $newFilename;
 
+            Product::create($blogData);
+
+            return redirect()->route('blog.post');
         
 
-            $Blog = new Blog();
+           /**  $Blog = new Blog();
             $Blog->title = $blogData['title'];
             $Blog->desc = $blogData['desc'];
             $Blog->tijd = $blogData['tijd'];
@@ -55,6 +64,7 @@ class baseController extends Controller
 
             $Blog->save();
             return 'Validatie is gelukt';
+            */
     }
 
 

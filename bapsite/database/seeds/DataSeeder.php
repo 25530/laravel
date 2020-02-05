@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Data;
-class InfoSeeder extends Seeder
+class DataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +11,15 @@ class InfoSeeder extends Seeder
      */
     public function run()
     {
-        // db data genereren
+        //
         for($i = 0; $i < 200; $i++){
             $data = new data();
+            $data->datum = new \DateTime();
             $data->title = 'data' . $i;
-            $pub_date = new \DateTime();
+            $data->text = 'hoi hidde';
+            $data->locatie = 'een random plek';
+            $data->tijd = '0:00';
             $data->save();
         }
     }
-} 
+}
